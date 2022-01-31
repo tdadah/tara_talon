@@ -1,0 +1,28 @@
+os: windows
+app: slack
+app: slack.exe
+
+#emoji: key(ctrl-shift-\)
+(slack | lack) new message: key(ctrl-n)
+(slack | lack) search: key(ctrl-g)
+(slack | lack) edit: key(ctrl-up)
+(slack | lack) threads: key(shift-ctrl-t)
+(slack | lack) set status: key(shift-ctrl-y)
+(slack | lack) focus next: key(f6)
+(slack | lack) focus last: key(shift-f6)
+(slack | lack) saved items: key(shift-ctrl-s)
+(slack | lack) toggle full screen: key(ctrl-shift-f)
+(slack | lack) jump: key(ctrl-j)
+(slack | lack) code: key(shift-ctrl-c)
+(slack | lack) code block: key(alt-shift-ctrl-c)
+(slack | lack) quote: key(shift-ctrl-9)
+(slack | lack) channel next: key(alt-down)
+(slack | lack) channel last: key(alt-up)
+(slack | lack) unread next: key(alt-shift-down)
+(slack | lack) unread last: key(alt-shift-up)
+(slack | lack) zip: key(ctrl-1)
+(slack | lack) quad pay: key(ctrl-2)
+(slack | lack) talon: key(ctrl-3)
+(slack | lack) huddle toggle: key(ctrl-shift-h)
+(slack | lack) work last: key(ctrl-tab)
+(slack | lack) work next: key(ctrl-shift-tab)
