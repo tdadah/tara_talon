@@ -16,3 +16,6 @@ references: key(alt-2)
 debug: key(f5)
 start without debugging: key(ctrl-f5)
 toggle breakpoint: key(f9)
+rename:
+	key(ctrl-r)
+	key(ctrl-r)
