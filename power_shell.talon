@@ -37,6 +37,7 @@ git stash:
 git stash pop:
 	insert("git stash pop")
 	key(enter)
+git cherry pick: insert("git cherry-pick ")
 
 strip guid:
 	insert("stripguid")
