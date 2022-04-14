@@ -2,7 +2,7 @@ os: windows
 app: Microsoft Visual Studio 2022
 app: devenv.exe
 
-quick actions: key(alt-enter)
+quick: key(alt-enter)
 save: key(ctrl-s)
 find in solution: key(alt-shift-ctrl-l)
 build: key(ctrl-b)
@@ -19,3 +19,5 @@ toggle breakpoint: key(f9)
 rename:
 	key(ctrl-r)
 	key(ctrl-r)
+step into: key(f11)
+step: key(f10)

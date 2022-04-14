@@ -23,6 +23,8 @@ git push:
 git status:
 	insert("git status")
 	key("enter")
+git switch:
+	insert("git switch ")
 git switch master:
 	insert("git switch master")
 	key("enter")
