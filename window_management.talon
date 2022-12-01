@@ -1,3 +1,5 @@
+os: windows
+
 app next: key(super-t)
 desktop toggle: key(super-d)
 (window|windows) (setting|settings): key(super-i)
