@@ -1,0 +1,85 @@
+os: mac
+-
+
+maven clean verify:
+	insert("mvn clean verify")
+	key("enter")
+maven generate sources:
+	insert("mvn generate-sources")
+	key("enter")
+go mod vendor:
+	insert("go mod vendor")
+	key("enter")
+make test:
+	insert("make test")
+	key("enter")
+make deploy:
+	insert("make deploy-kustomize")
+	key("enter")
+deploy staging:
+	insert("make deploy-kustomize")
+	key("enter")
+	sleep(1s)
+	key("1")
+	key("enter")
+	sleep(1s)
+	key("3")
+	key("enter")
+make up:
+	insert("make down && make up")
+	key("enter")
+make down:
+	insert("make down")
+	key("enter")
+make down up:
+	insert("make down && make up")
+	key("enter")
+make vendor:
+	insert("make vendor")
+	key("enter")
+go get:
+	insert("go get ")
+test traffic:
+	insert("curl -X GET 'http://localhost:8080/RYDPO6840119927.mp3' -H 'Ip-Sim: 68.202.214.206'")
+	key("enter")
+test handler:
+	insert("curl -X GET -d '{")
+	key(enter)
+	insert("        \"request_id\": \"4637f44b-869a-4af5-98f4-d12062630437\",")
+	key(enter)
+	insert("        \"user_info\": {")
+	key(enter)
+	insert("           \"exelate_person_id\": \"\",")
+	key(enter)
+	insert("           \"ip_address\": \"68.202.214.206\",")
+	key(enter)
+	insert("           \"user_agent\": \"spotify\",")
+	key(enter)
+	insert("           \"device_platform\": \"\",")
+	key(enter)
+	insert("           \"app_id\": \"\",")
+	key(enter)
+	insert("           \"app_version\": \"\",")
+	key(enter)
+	insert("           \"nielsen_audience_segments\": null")
+	key(enter)
+	insert("        },")
+	key(enter)
+	insert("        \"slot_requests\": [")
+	key(enter)
+	insert("           {")
+	key(enter)
+	insert("              \"slot\": \"midroll\",")
+	key(enter)
+	insert("              \"position\": 1")
+	key(enter)
+	insert("           }")
+	key(enter)
+	insert("        ],")
+	key(enter)
+	insert("        \"spotify_episode_id\": \"spotify:episode:6QkVOdcAZcUF8XvFif8TUN\",")
+	key(enter)
+	insert("        \"competitive_exclusions\": null")
+	key(enter)
+	insert("     }' http://localhost:8083 -v")
+	key(enter)

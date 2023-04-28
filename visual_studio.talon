@@ -1,6 +1,7 @@
 os: windows
 app: Microsoft Visual Studio 2022
 app: devenv.exe
+-
 
 quick: key(alt-enter)
 save: key(ctrl-s)

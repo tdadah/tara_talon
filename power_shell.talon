@@ -1,5 +1,6 @@
 os: windows
 and app.exe: pwsh.exe
+-
 
 lisa:
 	insert("ls")
@@ -29,7 +30,7 @@ git switch master:
 	insert("git switch master")
 	key("enter")
 git checkout:
-	insert("git checkout -b tdadah/REPAY-")
+	insert("git checkout -b tarad/MEG-")
 git rebase master:
 	insert("git rebase master")
 	key("enter")

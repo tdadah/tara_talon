@@ -1,6 +1,7 @@
 os: windows
 app: slack
 app: slack.exe
+-
 
 #emoji: key(ctrl-shift-\)
 new message: key(ctrl-n)
