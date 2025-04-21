@@ -1,0 +1,26 @@
+os: mac
+app: slack
+-
+
+new message: key(cmd-n)
+search: key(cmd-g)
+edit: key(e)
+threads: key(shift-cmd-t)
+set status: key(shift-cmd-y)
+focus next: key(f6)
+focus last: key(shift-f6)
+saved items: key(shift-cmd-s)
+toggle full screen: key(ctrl-cmd-f)
+jump: key(cmd-j)
+code: key(shift-cmd-c)
+code block: key(alt-shift-cmd-c)
+quote: key(shift-cmd-9)
+channel next: key(alt-down)
+channel last: key(alt-up)
+unread next: key(alt-shift-down)
+unread last: key(alt-shift-up)
+spotify: key(cmd-1)
+talon: key(cmd-2)
+sop: key(cmd-3)
+huddle toggle: key(cmd-shift-h)
+link: key(shift-cmd-u)

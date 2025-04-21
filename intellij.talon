@@ -1,0 +1,53 @@
+os: mac
+app: idea
+-
+
+save that: key(cmd-s)
+duplicate that: key(cmd-d)
+definition: key(cmd-b)
+rename: key(shift-f6)
+if err: 
+	insert("if err != nil {")
+	key(enter)
+function: insert("func ")
+show in: key(alt-f1)
+project file:
+	key(alt-f1)
+	key(1)
+search files:
+	key(shift)
+	key(shift)
+quick action: key(alt-enter)
+recent files: key(cmd-e)
+find usages: key(alt-f7)
+search all: key(cmd-shift-f)
+back: key(cmd-[)
+forward: key(cmd-])
+insert output:
+	insert("fmt.Printf(\"\\n\\nTEST: %v\\n\\n\", )")
+	key(left)
+file: key(cmd-shift-o)
+step over: key(f8)
+step into: key(f7)
+continue: key(alt-cmd-r)
+show commit window: key(cmd-0)
+show project window: key(cmd-1)
+show run window: key(cmd-4)
+run anything:
+	key(ctrl)
+	key(ctrl)
+refactor this: key(ctrl-t)
+next method: key(ctrl-shift-down)
+previous method: key(ctrl-shift-up)
+page top: key(cmd-pageup)
+page bottom: key(cmd-pagedown)
+tab next: key(shift-cmd-])
+tab last: key(shift-cmd-[)
+tab close: key(cmd-w)
+split right: key(ctrl-alt-cmd-right)
+unsplit: key(ctrl-alt-cmd-up)
+splitter next: key(alt-tab)
+splitter last: key(alt-shift-tab)
+go to line: key(cmd-l)
+copilot next: key(alt-])
+copilot back: key(alt-[)

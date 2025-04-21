@@ -1,14 +1,41 @@
 os: mac
+# app: Terminal
+app: iterm2
 -
 
+set java eleven:
+	insert("sdk default java 11.0.16-amzn")
+	key("enter")
+set java seventeen:
+	insert("sdk default java 17.0.4-amzn")
+jupiter notebook: 
+    insert("jupyter notebook")
+    key("enter")
+git checkout:
+	insert("git checkout -b tarad/DREAD-")
+maven verify:
+	insert("mvn verify")
+	key("enter")
 maven clean verify:
 	insert("mvn clean verify")
 	key("enter")
 maven generate sources:
 	insert("mvn generate-sources")
 	key("enter")
+maven package:
+	insert("mvn -P uberJar package")
+	key("enter")
+maven format:
+	insert("mvn fmt:format")
+	key("enter")
+java run:
+	insert("java -jar target/user-agent-normalization-0.0.1-SNAPSHOT.jar")
+	key("enter")
 go mod vendor:
 	insert("go mod vendor")
+	key("enter")
+go mod tidy:
+	insert("go mod tidy")
 	key("enter")
 make test:
 	insert("make test")
@@ -39,6 +66,24 @@ make vendor:
 	key("enter")
 go get:
 	insert("go get ")
+Katie meg:
+	insert("cd /Users/tarad/src/ghe.spotify.net/megaphone")
+	key("enter")
+Katie work:
+	insert("cd /Users/tarad/src/ghe.spotify.net")
+	key("enter")
+impersonate matcha:
+	insert("gcloud config set auth/impersonate_service_account matcha@gke-accounts.iam.gserviceaccount.com")
+	key("enter")
+of token matcha:
+	insert("gcloud auth print-identity-token --impersonate-service-account=matcha@gke-accounts.iam.gserviceaccount.com --audiences='http://matcha' --include-email")
+	key("enter")
+impersonate add logic:
+	insert("gcloud config set auth/impersonate_service_account local-development@ad-logic.iam.gserviceaccount.com")
+	key("enter")
+unset impersonate:
+	insert("gcloud config unset auth/impersonate_service_account")
+	key("enter")
 test traffic:
 	insert("curl -X GET 'http://localhost:8080/RYDPO6840119927.mp3' -H 'Ip-Sim: 68.202.214.206'")
 	key("enter")
@@ -53,7 +98,7 @@ test handler:
 	key(enter)
 	insert("           \"ip_address\": \"68.202.214.206\",")
 	key(enter)
-	insert("           \"user_agent\": \"spotify\",")
+	insert("           \"user_agent\": \"xbox\",")
 	key(enter)
 	insert("           \"device_platform\": \"\",")
 	key(enter)
