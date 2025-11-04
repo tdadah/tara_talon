@@ -1,5 +1,5 @@
 os: mac
-app: Chrome
+app: Firefox
 -
 
 tab duke: key(alt-shift-d)

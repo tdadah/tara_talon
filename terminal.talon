@@ -3,6 +3,9 @@ os: mac
 app: iterm2
 -
 
+Katie source:
+	insert("cd ~/src/ghe.spotify.net")
+	key("enter")
 set java eleven:
 	insert("sdk default java 11.0.16-amzn")
 	key("enter")
@@ -83,6 +86,9 @@ impersonate add logic:
 	key("enter")
 unset impersonate:
 	insert("gcloud config unset auth/impersonate_service_account")
+	key("enter")
+open intellij:
+	insert("idea .")
 	key("enter")
 test traffic:
 	insert("curl -X GET 'http://localhost:8080/RYDPO6840119927.mp3' -H 'Ip-Sim: 68.202.214.206'")
