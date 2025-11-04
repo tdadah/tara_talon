@@ -2,5 +2,5 @@
 mode: all
 -
 ^drowse [<phrase>]$: speech.disable()
-^jolt$: speech.enable()
+#^jolt$: speech.enable()
 
