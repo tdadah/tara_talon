@@ -3,6 +3,9 @@ os: mac
 app: iterm2
 -
 
+intellij:
+	insert("idea .")
+	key("enter")
 Katie source:
 	insert("cd ~/src/ghe.spotify.net")
 	key("enter")
@@ -15,7 +18,7 @@ jupiter notebook:
     insert("jupyter notebook")
     key("enter")
 git checkout:
-	insert("git checkout -b tarad/DREAD-")
+	insert("git checkout -b tarad/ADSSERV-")
 maven verify:
 	insert("mvn verify")
 	key("enter")
