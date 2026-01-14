@@ -1,8 +1,24 @@
 os: mac
-# app: Terminal
 app: iterm2
 -
 
+enter: key("enter")
+sublime: insert("subl ")
+slash exit:
+    insert("/exit")
+    sleep(20ms)
+    key("enter")
+slash em sip:
+    insert("/mcp")
+    sleep(20ms)
+    key("enter")
+slash model:
+    insert("/model")
+    sleep(20ms)
+    key("enter")
+start clod:
+	insert("claude")
+	key("enter")
 intellij:
 	insert("idea .")
 	key("enter")
@@ -25,6 +41,9 @@ maven verify:
 maven clean verify:
 	insert("mvn clean verify")
 	key("enter")
+maven clean compile:
+	insert("mvn clean compile")
+	key("enter")
 maven generate sources:
 	insert("mvn generate-sources")
 	key("enter")
@@ -33,9 +52,6 @@ maven package:
 	key("enter")
 maven format:
 	insert("mvn fmt:format")
-	key("enter")
-java run:
-	insert("java -jar target/user-agent-normalization-0.0.1-SNAPSHOT.jar")
 	key("enter")
 go mod vendor:
 	insert("go mod vendor")
@@ -89,9 +105,6 @@ impersonate add logic:
 	key("enter")
 unset impersonate:
 	insert("gcloud config unset auth/impersonate_service_account")
-	key("enter")
-open intellij:
-	insert("idea .")
 	key("enter")
 test traffic:
 	insert("curl -X GET 'http://localhost:8080/RYDPO6840119927.mp3' -H 'Ip-Sim: 68.202.214.206'")
