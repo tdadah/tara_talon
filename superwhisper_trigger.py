@@ -12,6 +12,7 @@ class Actions:
         actions.speech.disable()
         actions.key("alt-space")
 
+    """ todo: delete ' Whisper stop. ' """
     def whisper_stop(wake_talon: bool = True):
         """Stops Superwhisper and optionally enables Talon speech"""
         actions.key("alt-space")
@@ -22,27 +23,3 @@ class Actions:
         """Cancels Superwhisper and enables Talon speech"""
         actions.speech.enable()
         actions.key("esc")
-
-    def whisper_toggle_mode():
-        """Toggles Superwhisper mode"""
-        actions.key("alt-shift-k")
-
-    # Mode switching
-    # def whisper_local():
-    #     """Disables speech and switches Superwhisper to local mode"""
-    #     actions.speech.disable()
-    #     actions.user.superwhisper_local_mode()
-
-    # def whisper_normal():
-    #     """Enables speech and switches Superwhisper to normal mode"""
-    #     actions.speech.enable()
-    #     actions.user.superwhisper_normal_mode()
-
-    # Helper functions (called by mode switching)
-    # def superwhisper_local_mode():
-    #     """Switches Superwhisper to local mode"""
-    #     actions.user.system_command_nb("/bin/bash /Users/rebec/scripts/superwhisper_local_mode.sh")
-
-    # def superwhisper_normal_mode():
-    #     """Switches Superwhisper to normal mode"""
-    #     actions.user.system_command_nb("/bin/bash /Users/rebec/scripts/superwhisper_normal_mode.sh")

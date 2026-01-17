@@ -235,12 +235,64 @@ _This section automatically updates based on commands you ask about most often._
 | `window maximize` / `window minimize` / `window restore` | Window states |
 | `window move` | Enter window move mode |
 
+## Accessibility Features (talon-axkit)
+
+### Window Actions
+| Command | Action |
+|---------|--------|
+| `window close` | Close current window |
+| `window close other` | Close all other windows in app |
+| `window close all` | Close all windows in app |
+| `window minimize` | Minimize current window |
+| `window minimize other` | Minimize all other windows in app |
+| `window minimize all` | Minimize all windows in app |
+| `window fullscreen` | Enter fullscreen for current window |
+| `window fullscreen other` | Fullscreen all other windows in app |
+| `window fullscreen all` | Fullscreen all windows in app |
+| `from <app> window close` | Close current window of specified app |
+| `from <app> window close all` | Close all windows of specified app |
+| `fullscreen enter` | Enter fullscreen mode |
+| `fullscreen exit` | Exit fullscreen mode |
+
+### Document Actions
+| Command | Action |
+|---------|--------|
+| `document open` | Open current document in default app |
+| `document open in <app>` | Open current document in specified app |
+| `document reveal` / `document show` | Reveal document location in Finder |
+| `document copy path` | Copy document path to clipboard |
+
+### Notification Actions
+| Command | Action |
+|---------|--------|
+| `note <number> <action>` | Perform action on notification number |
+| `note <number> actions` | Show available actions for notification |
+| `note actions` | Show actions for most recent notification |
+| `note <action> <app>` | Perform action on first notification from app |
+| `note update` | Update notification list |
+| `note center` | Open/close Notification Center |
+
+### Talon Development Helpers
+| Command | Action |
+|---------|--------|
+| `element hierarchy` | Print element hierarchy at mouse position |
+| `element hierarchy more` | Print detailed element hierarchy |
+| `element hierarchy all` | Print full element hierarchy |
+| `element tree` | Print element tree at mouse position |
+| `element tree more` | Print detailed element tree |
+| `element tree all` | Print full element tree |
+| `talon copy menu select` | Copy Talonscript for menu item under cursor |
+| `talon copy menu key` | Copy menu key code |
+| `talon copy menu key pie` | Copy menu key Python code |
+| `talon copy app element` | Copy app element reference to clipboard |
+
 ## Tips
 
 1. **Finding app names**: Say `running list` to see what Talon calls your apps
 2. **Multiple windows**: Calling `focus` on an already-focused app cycles through its windows
 3. **Customizing app names**: Edit `app_name_overrides.mac.csv` to change spoken names
 4. **IntelliJ plugin**: Requires Voice Code IDEA plugin for full functionality
+5. **Accessibility dictation**: Set `user.accessibility_dictation = 1` in settings for context-aware dictation in supported apps
 
 ## Resources
 
