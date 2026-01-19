@@ -1,5 +1,7 @@
 os: windows
+os: mac
 app: plex.exe
+app: plex
 -
 
 
