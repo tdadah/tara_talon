@@ -313,23 +313,30 @@ class ContextCommandsPoller:
             # Clean up the filename
             display_name = filename.replace("_", " ").title()
 
-            # Add prefix based on source
-            path_lower = normalized.lower()
-            if "tara_talon" in path_lower:
-                return f"[Tara] {display_name}"
-            elif "knausj_talon" in path_lower:
-                # Find subdirectory after knausj_talon
-                for i, part in enumerate(parts):
-                    if part.lower() == "knausj_talon" and i + 1 < len(parts) - 1:
-                        subdir = parts[i + 1]
-                        if subdir.lower() in ["apps", "tags", "core", "plugin"]:
-                            return f"[{subdir.title()}] {display_name}"
-                        break
-                return display_name
-            else:
-                return display_name
+            # Find the source directory (first part after "user")
+            prefix = ""
+            for i, part in enumerate(parts):
+                if part.lower() == "user" and i + 1 < len(parts):
+                    source_dir = parts[i + 1]
+                    # Clean up the source name to create a short prefix
+                    prefix = self._clean_source_name(source_dir)
+                    break
+
+            if prefix:
+                return f"[{prefix}] {display_name}"
+            return display_name
         except:
             return "Unknown Context"
+
+    def _clean_source_name(self, source: str) -> str:
+        """Convert source directory name to a clean prefix (e.g., tara_talon -> Tara)."""
+        name = source.lower()
+        # Remove common prefixes/suffixes
+        for pattern in ["talon_", "talon-", "_talon", "-talon"]:
+            name = name.replace(pattern, "")
+        # Clean up remaining separators and title case
+        name = name.replace("_", " ").replace("-", " ").strip()
+        return name.title()
 
 
 # Global poller instance
