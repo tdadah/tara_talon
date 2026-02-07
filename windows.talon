@@ -2,4 +2,6 @@ os: windows
 -
 
 settings():
-    user.mode_indicator_show = true
+    # Enables axkit (apple accessibility)
+    user.context_sensitive_dictation = 1
+    user.accessibility_dictation = 1

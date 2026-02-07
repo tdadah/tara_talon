@@ -2,6 +2,7 @@ os: windows
 os: mac
 app: plex.exe
 app: plex
+app: Plex HTPC.exe
 -
 
 
