@@ -23,7 +23,10 @@ recenter:
 	insert("recentre")
 	key("enter")
 
-
+set zoom <user.number_string>:
+    insert("set zoom ")
+    insert(number_string)
+    key("enter")
 
 
 

@@ -21,28 +21,34 @@ pause:
 (continue | resume):
     insert("continue")
     key("enter")
-[self] destruct:
+
+self destruct:
     insert("destruct")
     key("enter")
+
 shutdown:
     insert("shutdown")
     key("enter")
+
 save:
     insert("save")
     key("enter")
+
+save aliases:
+    insert("save aliases")
+    key("enter")
+
 target <user.text>:
     modified = "target " + text
     insert(modified)
     key("enter")
+
 scan:
     insert("scan")
     key("enter")
+
 scan spacecraft:
     insert("scan spacecraft")
-    key("enter")
-enable <user.text>:
-    modified = "enable " + text
-    insert(modified)
     key("enter")
 
 launch fighters:
@@ -249,3 +255,132 @@ request dry dock:
 request resupply: 
     insert("request resupply")
     key("enter")
+
+reverse tractor [polarity]: 
+    insert("reverse tractor polarity")
+    key("enter")
+
+set autopilot engines <user.number_string>:
+    insert("set autopilot engines ")
+    insert(number_string)
+    key("enter")
+
+set autopilot thrusters <user.number_string>:
+    insert("set autopilot thrusters ")
+    insert(number_string)
+    key("enter")
+
+set autopilot rudder <user.number_string>:
+    insert("set autopilot rudder ")
+    insert(number_string)
+    key("enter")
+
+set bearing <user.number_string>:
+    insert("set bearing ")
+    insert(number_string)
+    key("enter")
+
+set engine <user.number_string>:
+    insert("set engine ")
+    insert(number_string)
+    key("enter")
+
+set fighter mode closest:
+    insert("set fighter mode closest")
+    key("enter")
+
+set fighter mode closest <user.number_string>:
+    insert("set fighter mode closest ")
+    insert(number_string)
+    key("enter")
+
+set fighter mode fighters:
+    insert("set fighter mode fighters")
+    key("enter")
+
+set fighter mode fighters <user.number_string>:
+    insert("set fighter mode fighters ")
+    insert(number_string)
+    key("enter")
+
+set fighter mode idle:
+    insert("set fighter mode idle")
+    key("enter")
+
+set fighter mode idle <user.number_string>:
+    insert("set fighter mode idle ")
+    insert(number_string)
+    key("enter")
+
+set fighter mode ships:
+    insert("set fighter mode ships")
+    key("enter")
+
+set fighter mode ships <user.number_string>:
+    insert("set fighter mode ships ")
+    insert(number_string)
+    key("enter")
+
+set fighter mode target:
+    insert("set fighter mode target")
+    key("enter")
+
+set fighter mode target <user.number_string>:
+    insert("set fighter mode target ")
+    insert(number_string)
+    key("enter")
+
+set laser mode asteroids:
+    insert("set laser mode target")
+    key("enter")
+
+set laser mode closest:
+    insert("set laser mode closest")
+    key("enter")
+
+set laser mode fighters:
+    insert("set laser mode fighters")
+    key("enter")
+
+set laser mode lifeforms:
+    insert("set laser mode lifeforms")
+    key("enter")
+
+set laser mode missiles:
+    insert("set laser mode missiles")
+    key("enter")
+
+set laser mode target:
+    insert("set laser mode target")
+    key("enter")
+
+set lasers <user.number_string>:
+    insert("set lasers ")
+    insert(number_string)
+    key("enter")
+
+set radio <user.number_string>:
+    insert("set radio ")
+    insert(number_string)
+    key("enter")
+
+set rudder <user.number_string>:
+    insert("set rudder ")
+    insert(number_string)
+    key("enter")
+
+set thrusters <user.number_string>:
+    insert("set thrusters ")
+    insert(number_string)
+    key("enter")
+
+set radio <user.number_string>:
+    insert("set radio ")
+    insert(number_string)
+    key("enter")
+
+set radio <user.number_string>:
+    insert("set radio ")
+    insert(number_string)
+    key("enter")
+
