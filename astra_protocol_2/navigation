@@ -1,0 +1,23 @@
+os: windows
+app: astra protocol 2
+-
+
+navigation: key("f5")
+
+( toggle autopilot | autopilot ( off | on )): key("f9")
+
+[display] star chart:
+    insert("display starchart")
+    key("enter")
+
+toggle [object] name visibility: key("space")
+
+cycle highlighted object: key("tab")
+
+zoom in: key("f10")
+
+zoom out: key("f11")
+
+recenter:
+    insert("recentre")
+    key("enter")
