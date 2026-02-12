@@ -369,18 +369,69 @@ set rudder <user.number_string>:
     insert(number_string)
     key("enter")
 
+set shields <user.number_string>:
+    insert("set shields ")
+    insert(number_string)
+    key("enter")
+
+# Specifying a positive value will provide a starboard translation, whilst a
+negative value will provide a port translation.
 set thrusters <user.number_string>:
     insert("set thrusters ")
     insert(number_string)
     key("enter")
 
-set radio <user.number_string>:
-    insert("set radio ")
-    insert(number_string)
+stabilize [all]:
+    insert("stabilize")
     key("enter")
 
-set radio <user.number_string>:
-    insert("set radio ")
-    insert(number_string)
+stabilize [all]:
+    insert("stabilize")
     key("enter")
+
+stabilize position:
+    insert("stabilize position")
+    key("enter")
+
+stabilize rotation:
+    insert("stabilize rotation")
+    key("enter")
+
+target asteroid:
+    insert("target asteroid")
+    key("enter")
+
+target clear:
+    insert("target clear")
+    key("enter")
+
+target closest:
+    insert("target closest")
+    key("enter")
+
+target collider:
+    insert("target collider")
+    key("enter")
+
+target fighter:
+    insert("target fighter")
+    key("enter")
+
+target lifeforms:
+    insert("target lifeforms")
+    key("enter")
+
+target planet:
+    insert("target planet")
+    key("enter")
+
+target ship:
+    insert("target ship")
+    key("enter")
+
+target station:
+    insert("target station")
+    key("enter")
+
+
 
