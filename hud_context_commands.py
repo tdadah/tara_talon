@@ -242,22 +242,39 @@ class ContextCommandsPoller:
                     'specificity_score': specificity_score
                 }
 
-        # Calculate final scores including priority boost
+        # Mark priority sources (user commands always beat community commands)
         for context_name in context_metadata:
             meta = context_metadata[context_name]
             path = meta.get('path', '')
             is_priority = any(p in path for p in self.priority_context_patterns)
-            if is_priority:
-                meta['specificity_score'] += 50
-                meta['is_priority'] = True
-            else:
-                meta['is_priority'] = False
+            meta['is_priority'] = is_priority
 
         def get_sort_key(context_name):
             meta = context_metadata.get(context_name, {})
             specificity_score = meta.get('specificity_score', 0)
-            # Sort order (higher specificity score = higher priority, so negate it)
+            is_priority = meta.get('is_priority', False)
+            is_app_specific = meta.get('is_app_specific', False)
+            has_specific_tags = meta.get('has_specific_tags', False)
+
+            # Determine specificity tier:
+            # Tier 0: App-specific contexts (most relevant)
+            # Tier 1: Tag-specific contexts (relevant to current mode)
+            # Tier 2: Generic contexts (always available)
+            if is_app_specific:
+                tier = 0
+            elif has_specific_tags or specificity_score >= 80:
+                tier = 1
+            else:
+                tier = 2
+
+            # Sort order:
+            # 1. Specificity tier (app-specific > tag-specific > generic)
+            # 2. Priority sources first within each tier (user > community)
+            # 3. Higher specificity score within tier
+            # 4. Alphabetical by name as tie-breaker
             return (
+                tier,
+                0 if is_priority else 1,  # Priority sources first within tier
                 -specificity_score,
                 context_name.lower()
             )

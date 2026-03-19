@@ -13,6 +13,9 @@ tag(): user.kubectl
 tag(): user.tabs
 tag(): user.readline
 
+(except|accept):
+	key("right")
+	key("enter")
 enter: key("enter")
 sublime: insert("subl ")
 slash exit:

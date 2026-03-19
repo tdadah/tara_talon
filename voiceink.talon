@@ -5,8 +5,8 @@ voicing start:
 	speech.disable()
     key("super-f1")
 voicing stop:
-	speech.enable()
 	key("alt-space")
+	speech.enable()
 voicing cancel:
 	key("alt-f12")
 	speech.enable()
