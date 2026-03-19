@@ -21,6 +21,10 @@ pause:
 (continue | resume):
     insert("continue")
     key("enter")
+# unpause == continue
+unpause:
+    insert("unpause")
+    key("enter")
 
 self destruct:
     insert("destruct")
@@ -369,18 +373,149 @@ set rudder <user.number_string>:
     insert(number_string)
     key("enter")
 
+set shields <user.number_string>:
+    insert("set shields ")
+    insert(number_string)
+    key("enter")
+
+# Specifying a positive value will provide a starboard translation, whilst a
+negative value will provide a port translation.
 set thrusters <user.number_string>:
     insert("set thrusters ")
     insert(number_string)
     key("enter")
 
-set radio <user.number_string>:
-    insert("set radio ")
+stabilize [all]:
+    insert("stabilize")
+    key("enter")
+
+stabilize [all]:
+    insert("stabilize")
+    key("enter")
+
+stabilize position:
+    insert("stabilize position")
+    key("enter")
+
+stabilize rotation:
+    insert("stabilize rotation")
+    key("enter")
+
+target asteroid:
+    insert("target asteroid")
+    key("enter")
+
+target clear:
+    insert("target clear")
+    key("enter")
+
+target closest:
+    insert("target closest")
+    key("enter")
+
+target collider:
+    insert("target collider")
+    key("enter")
+
+target fighter:
+    insert("target fighter")
+    key("enter")
+
+target lifeforms:
+    insert("target lifeforms")
+    key("enter")
+
+target planet:
+    insert("target planet")
+    key("enter")
+
+target ship:
+    insert("target ship")
+    key("enter")
+
+target station:
+    insert("target station")
+    key("enter")
+
+umbilical angle starboard <user.number_string>:
+    insert("umbilical angle starboard ")
     insert(number_string)
     key("enter")
 
-set radio <user.number_string>:
-    insert("set radio ")
+umbilical angle port <user.number_string>:
+    insert("umbilical angle port ")
+    insert(number_string)
+    key("enter")
+
+umbilical extend starboard:
+    insert("umbilical extend starboard ")
+    key("enter")
+
+umbilical extend port:
+    insert("umbilical extend port ")
+    key("enter")
+
+umbilical lock starboard:
+    insert("umbilical lock starboard ")
+    key("enter")
+
+umbilical lock port:
+    insert("umbilical lock port ")
+    key("enter")
+
+umbilical retract starboard:
+    insert("umbilical retract starboard ")
+    key("enter")
+
+umbilical retract port:
+    insert("umbilical retract port ")
+    key("enter")
+
+umbilical stop starboard:
+    insert("umbilical stop starboard ")
+    key("enter")
+
+umbilical stop port:
+    insert("umbilical stop port ")
+    key("enter")
+
+umbilical unlock starboard:
+    insert("umbilical unlock starboard ")
+    key("enter")
+
+umbilical lock port:
+    insert("umbilical unlock port ")
+    key("enter")
+
+# unload all missiles
+unload [all]:
+    insert("unload")
+    key("enter")
+
+unload forward [all]:
+    insert("unload forward")
+    key("enter")
+
+unload forward <user.number_string>:
+    insert("unload forward ")
+    insert(number_string)
+    key("enter")
+
+unload starboard [all]:
+    insert("unload starboard")
+    key("enter")
+
+unload starboard <user.number_string>:
+    insert("unload starboard ")
+    insert(number_string)
+    key("enter")
+
+unload port [all]:
+    insert("unload port")
+    key("enter")
+
+unload port <user.number_string>:
+    insert("unload port ")
     insert(number_string)
     key("enter")
 
