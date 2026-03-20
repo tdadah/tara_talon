@@ -2,6 +2,7 @@ os: mac
 app: iterm2
 app: Warp
 app: ghostty
+app: emacs
 -
 
 tag(): terminal
@@ -13,6 +14,11 @@ tag(): user.kubectl
 tag(): user.tabs
 tag(): user.readline
 
+talon logs:
+    insert("/Users/tarad/.talon/.venv/bin/repl")
+    key("enter")
+    insert("events.tail()")
+    key("enter")
 (except|accept):
 	key("right")
 	key("enter")
@@ -32,7 +38,7 @@ slash model:
     key("enter")
 start clod:
 	insert("claude")
-	key("enter")
+    key("enter")
 intellij:
 	insert("idea .")
 	key("enter")

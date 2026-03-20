@@ -25,6 +25,9 @@ paste above:    key(P)
 undo:           key(u)
 redo:           key(ctrl-r)
 
+# ---- Spell check ----
+spell check: key(z =)
+
 # ---- Search ----
 search:         key(/)
 search back:    key(?)
@@ -39,9 +42,6 @@ jump right: key(ctrl-w l)
 jump up: key(ctrl-w k)
 jump down: key(ctrl-w j)
 
-# ---- Buffer tabs (centaur-tabs) ----
-tab next: key(g t)
-tab back: key(g T)
 
 # ---- Visual mode ----
 visual [mode]:

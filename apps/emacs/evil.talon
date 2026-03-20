@@ -27,18 +27,90 @@ open [line] above:
     key(O)
     user.evil_set_insert()
 
+# ---- Claude Code IDE ----
+claude open: user.emacs("claude-code-ide")
+claude stop: user.emacs("claude-code-ide-send-escape")
+claude newline: user.emacs("claude-code-ide-insert-newline")
+claude menu: key(ctrl-c ctrl-')
+
+# ---- Buffer tabs (centaur-tabs) ----
+tab next: key(g t)
+tab back: key(g T)
+
 # ---- Doom leader key ----
 # Override user.emacs_leader in settings.talon to match your doom config:
 #   user.emacs_leader = apostrophe
 leader: user.emacs_leader()
+
+# ---- Org agenda ----
+org agenda:
+    user.emacs_leader()
+    key(o a)
+
+# ---- Org priority ----
+org priority:
+    user.emacs_leader()
+    key(m p p)
+
+org priority up:
+    user.emacs_leader()
+    key(m p u)
+
+org priority down:
+    user.emacs_leader()
+    key(m p d)
+
+# ---- Org dates ----
+org schedule:
+    user.emacs_leader()
+    key(m d s)
+
+org deadline:
+    user.emacs_leader()
+    key(m d d)
+
+# ---- Org capture ----
+capture todo:
+    user.emacs_leader()
+    key(X t)
+
+capture journal:
+    user.emacs_leader()
+    key(X j)
+
+capture finish: key(ctrl-c ctrl-c)
+capture refile: key(ctrl-c ctrl-w)
+capture abort: key(ctrl-c ctrl-k)
 
 # ---- Project file finder ----
 find file:
     user.emacs_leader()
     key(space)
 
+switch project:
+    user.emacs_leader()
+    key(p p)
+
+# ---- Git ----
+magit status:
+    user.emacs_leader()
+    key(g g)
+
+git blame:
+    user.emacs_leader()
+    key(g B)
+
+git branch:
+    user.emacs_leader()
+    key(g b)
+
+# ---- Vterm ----
+vterm:
+    user.emacs_leader()
+    key(o T)
+
 # ---- Treemacs ----
-treemacs:
+(treemacs | open project tree):
     user.emacs_leader()
     key(o p)
 
