@@ -42,10 +42,29 @@ tab back: key(g T)
 #   user.emacs_leader = apostrophe
 leader: user.emacs_leader()
 
+# ---- Calendar sync ----
+calendar sync: user.emacs("my/gcal-sync")
+
 # ---- Org agenda ----
 org agenda:
     user.emacs_leader()
     key(o a)
+
+org agenda day: user.emacs("org-agenda-day-view")
+org agenda week: user.emacs("org-agenda-week-view")
+org agenda month: user.emacs("org-agenda-month-view")
+org agenda today: user.emacs("org-agenda-goto-today")
+org agenda next: user.emacs("org-agenda-later")
+org agenda last: user.emacs("org-agenda-earlier")
+
+# ---- Org navigation ----
+org next heading: user.emacs("org-next-visible-heading")
+org last heading: user.emacs("org-previous-visible-heading")
+org up heading: user.emacs("org-up-heading")
+org fold: user.emacs("org-cycle")
+org fold all: user.emacs("org-overview")
+org unfold all: user.emacs("org-show-all")
+org todo: user.emacs("org-todo")
 
 # ---- Org priority ----
 org priority:
