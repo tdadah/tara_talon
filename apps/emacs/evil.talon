@@ -29,9 +29,22 @@ open [line] above:
 
 # ---- Claude Code IDE ----
 claude open: user.emacs("claude-code-ide")
-claude stop: user.emacs("claude-code-ide-send-escape")
+(claude stop | claude escape): user.emacs("claude-code-ide-send-escape")
 claude newline: user.emacs("claude-code-ide-insert-newline")
 claude menu: key(ctrl-c ctrl-')
+
+# ---- Editing ----
+recenter: key(z z)
+undo: key(u)
+redo: key(ctrl-r)
+
+# ---- Window focus (Evil ctrl-w bindings) ----
+jump next: key(ctrl-w ctrl-w)
+jump last: key(ctrl-w W)
+jump left: key(ctrl-w h)
+jump right: key(ctrl-w l)
+jump up: key(ctrl-w k)
+jump down: key(ctrl-w j)
 
 # ---- Buffer tabs (centaur-tabs) ----
 tab next: key(g t)
@@ -54,6 +67,7 @@ org agenda day: user.emacs("org-agenda-day-view")
 org agenda week: user.emacs("org-agenda-week-view")
 org agenda month: user.emacs("org-agenda-month-view")
 org agenda today: user.emacs("org-agenda-goto-today")
+org agenda todo: user.emacs("org-agenda-todo")
 org agenda next: user.emacs("org-agenda-later")
 org agenda last: user.emacs("org-agenda-earlier")
 
@@ -65,6 +79,7 @@ org fold: user.emacs("org-cycle")
 org fold all: user.emacs("org-overview")
 org unfold all: user.emacs("org-show-all")
 org todo: user.emacs("org-todo")
+org check: user.emacs("org-toggle-checkbox")
 
 # ---- Org priority ----
 org priority:
@@ -101,6 +116,28 @@ capture finish: key(ctrl-c ctrl-c)
 capture refile: key(ctrl-c ctrl-w)
 capture abort: key(ctrl-c ctrl-k)
 
+# ---- Project search ----
+# ---- Code navigation ----
+find definition: user.emacs("lsp-find-definition")
+find references: user.emacs("lsp-find-references")
+
+search directory:
+    user.emacs_leader()
+    key(s d)
+
+search project:
+    user.emacs_leader()
+    key(s p)
+
+# ---- File finder ----
+find file anywhere:
+    user.emacs_leader()
+    key(f l)
+
+recent files:
+    user.emacs_leader()
+    key(f r)
+
 # ---- Project file finder ----
 find file:
     user.emacs_leader()
@@ -114,6 +151,18 @@ switch project:
 magit status:
     user.emacs_leader()
     key(g g)
+
+git pull:
+    user.emacs_leader()
+    key(g f p)
+
+git push:
+    user.emacs_leader()
+    key(g p p)
+
+git fetch:
+    user.emacs_leader()
+    key(g f f)
 
 git blame:
     user.emacs_leader()

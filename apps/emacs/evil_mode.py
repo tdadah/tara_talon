@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, settings
+from talon import Context, Module, actions, settings, ui
 
 mod = Module()
 mod.tag("evil_normal", desc="Evil-mode normal mode is active in Emacs")
@@ -16,6 +16,13 @@ mod.setting(
 evil_ctx = Context()
 evil_ctx.matches = "app: emacs"
 evil_ctx.tags = ["user.evil_normal"]
+
+
+def on_win_focus(win):
+    if "emacs" in win.app.name.lower():
+        evil_ctx.tags = ["user.evil_normal"]
+
+ui.register("win_focus", on_win_focus)
 
 
 @mod.action_class

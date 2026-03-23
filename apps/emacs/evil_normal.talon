@@ -13,17 +13,12 @@ go word:        key(w)
 go back [word]: key(b)
 go [word] end:  key(e)
 
-# Center current line in view
-recenter: key(z z)
-
 # ---- Editing ----
 delete line:    key(d d)
 delete word:    key(d w)
 yank line:      key(y y)
 paste [below]:  key(p)
 paste above:    key(P)
-undo:           key(u)
-redo:           key(ctrl-r)
 
 # ---- Spell check ----
 spell check: key(z =)
@@ -34,13 +29,6 @@ search back:    key(?)
 next [match]:   key(n)
 prev [match]:   key(N)
 
-# ---- Window focus (Evil ctrl-w bindings) ----
-jump next: key(ctrl-w ctrl-w)
-jump last: key(ctrl-w W)
-jump left: key(ctrl-w h)
-jump right: key(ctrl-w l)
-jump up: key(ctrl-w k)
-jump down: key(ctrl-w j)
 
 
 # ---- Visual mode ----
