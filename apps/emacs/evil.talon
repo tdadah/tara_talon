@@ -145,6 +145,10 @@ capture journal:
     user.emacs_leader()
     key(X j)
 
+capture meeting:
+    user.emacs_leader()
+    key(X m)
+
 capture pull request:
     user.emacs_leader()
     key(X p)
