@@ -33,6 +33,16 @@ claude open: user.emacs("claude-code-ide")
 claude newline: user.emacs("claude-code-ide-insert-newline")
 claude menu: key(ctrl-c ctrl-')
 
+# ---- Help ----
+show keys: user.emacs("describe-bindings")
+show mode: user.emacs("describe-mode")
+
+# ---- Scrolling ----
+scroll down: key(ctrl-d)
+scroll up: key(ctrl-u)
+page down: key(ctrl-f)
+page up: key(ctrl-b)
+
 # ---- Editing ----
 recenter: key(z z)
 undo: key(u)
@@ -58,6 +68,25 @@ leader: user.emacs_leader()
 # ---- Calendar sync ----
 calendar sync: user.emacs("my/gcal-sync")
 
+# ---- Org roam ----
+roam find:
+    user.emacs_leader()
+    key(n r f)
+
+roam insert:
+    user.emacs_leader()
+    key(n r i)
+
+roam backlinks:
+    user.emacs_leader()
+    key(n r r)
+
+roam sync: user.emacs("org-roam-db-sync")
+
+roam today:
+    user.emacs_leader()
+    key(n r d T)
+
 # ---- Org agenda ----
 org agenda:
     user.emacs_leader()
@@ -70,6 +99,10 @@ org agenda today: user.emacs("org-agenda-goto-today")
 org agenda todo: user.emacs("org-agenda-todo")
 org agenda next: user.emacs("org-agenda-later")
 org agenda last: user.emacs("org-agenda-earlier")
+
+# ---- Org archive ----
+org archive: user.emacs("org-archive-subtree")
+org refile: user.emacs("org-refile")
 
 # ---- Org navigation ----
 org next heading: user.emacs("org-next-visible-heading")
@@ -112,11 +145,22 @@ capture journal:
     user.emacs_leader()
     key(X j)
 
+capture pull request:
+    user.emacs_leader()
+    key(X p)
+
 capture finish: key(ctrl-c ctrl-c)
 capture refile: key(ctrl-c ctrl-w)
 capture abort: key(ctrl-c ctrl-k)
 
 # ---- Project search ----
+# ---- Ediff ----
+diff next: user.emacs("ediff-next-difference")
+diff last: user.emacs("ediff-previous-difference")
+diff accept (a | left): user.emacs("ediff-copy-A-to-B")
+diff accept (b | right): user.emacs("ediff-copy-B-to-A")
+diff quit: user.emacs("ediff-quit")
+
 # ---- Code navigation ----
 find definition: user.emacs("lsp-find-definition")
 find references: user.emacs("lsp-find-references")
@@ -148,21 +192,32 @@ switch project:
     key(p p)
 
 # ---- Git ----
+magit next: user.emacs("magit-section-forward-sibling")
+magit last: user.emacs("magit-section-backward-sibling")
+magit next file: user.emacs("magit-section-forward")
+magit last file: user.emacs("magit-section-backward")
+magit visit file: user.emacs("magit-diff-visit-file")
+magit expand: user.emacs("magit-section-toggle")
+
+magit stash: user.emacs("magit-stash")
+magit push: user.emacs("magit-push")
+magit pull: user.emacs("magit-pull")
+magit fetch: user.emacs("magit-fetch")
+magit commit: user.emacs("magit-commit")
+magit merge: user.emacs("magit-merge")
+magit rebase: user.emacs("magit-rebase")
+magit log: user.emacs("magit-log")
+magit diff: user.emacs("magit-diff")
+magit checkout: user.emacs("magit-checkout")
+magit cherry pick: user.emacs("magit-cherry-pick")
+magit reset: user.emacs("magit-reset")
+magit stage: user.emacs("magit-stage")
+magit unstage: user.emacs("magit-unstage")
+magit discard: user.emacs("magit-discard")
+
 magit status:
     user.emacs_leader()
     key(g g)
-
-git pull:
-    user.emacs_leader()
-    key(g f p)
-
-git push:
-    user.emacs_leader()
-    key(g p p)
-
-git fetch:
-    user.emacs_leader()
-    key(g f f)
 
 git blame:
     user.emacs_leader()
