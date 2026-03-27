@@ -1,6 +1,7 @@
 from talon import Context, Module, actions, settings, ui
 
 mod = Module()
+mod.tag("doom", desc="Doom Emacs is active — overrides knausj emacs commands")
 mod.tag("evil_normal", desc="Evil-mode normal mode is active in Emacs")
 mod.tag("evil_insert", desc="Evil-mode insert mode is active in Emacs")
 
@@ -15,12 +16,12 @@ mod.setting(
 # Talon reads ctx.tags to know which tag-gated commands are active.
 evil_ctx = Context()
 evil_ctx.matches = "app: emacs"
-evil_ctx.tags = ["user.evil_normal"]
+evil_ctx.tags = ["user.doom", "user.evil_normal"]
 
 
 def on_win_focus(win):
     if "emacs" in win.app.name.lower():
-        evil_ctx.tags = ["user.evil_normal"]
+        evil_ctx.tags = ["user.doom", "user.evil_normal"]
 
 ui.register("win_focus", on_win_focus)
 
@@ -29,11 +30,11 @@ ui.register("win_focus", on_win_focus)
 class Actions:
     def evil_set_normal():
         "Update Talon state to reflect evil normal mode (does not send keys to Emacs)."
-        evil_ctx.tags = ["user.evil_normal"]
+        evil_ctx.tags = ["user.doom", "user.evil_normal"]
 
     def evil_set_insert():
         "Update Talon state to reflect evil insert mode (does not send keys to Emacs)."
-        evil_ctx.tags = ["user.evil_insert"]
+        evil_ctx.tags = ["user.doom", "user.evil_insert"]
 
     def emacs_leader():
         "Press the Doom Emacs leader key."

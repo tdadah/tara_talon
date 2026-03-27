@@ -1,4 +1,5 @@
 app: emacs
+tag: user.doom
 -
 # ---- Mode switching ----
 # These are available regardless of current evil state so you can always
@@ -32,6 +33,37 @@ claude open: user.emacs("claude-code-ide")
 claude (stop | escape): user.emacs("claude-code-ide-send-escape")
 claude newline: user.emacs("claude-code-ide-insert-newline")
 claude menu: key(ctrl-c ctrl-')
+
+# ---- Messages ----
+show messages: user.emacs("view-echo-area-messages")
+
+# ---- Navigation ----
+go top:         key(g g)
+go bottom:      key(G)
+go [line] start: key(0)
+go [line] end:  key($)
+go word:        key(w)
+go back [word]: key(b)
+go [word] end:  key(e)
+
+# ---- Editing (normal mode) ----
+delete line:    key(d d)
+delete word:    key(d w)
+yank line:      key(y y)
+paste [below]:  key(p)
+paste above:    key(P)
+
+# ---- Spell check ----
+spell check: key(z =)
+
+# ---- Search ----
+search:         key(/)
+search back:    key(?)
+next [match]:   key(n)
+prev [match]:   key(N)
+
+# ---- Frame ----
+fit screen: user.emacs("my/fit-screen")
 
 # ---- Help ----
 show keys: user.emacs("describe-bindings")
@@ -158,12 +190,36 @@ capture refile: key(ctrl-c ctrl-w)
 capture abort: key(ctrl-c ctrl-k)
 
 # ---- Project search ----
+diff toggle: user.emacs("ediff-toggle-split")
+diff scroll down: user.emacs("ediff-scroll-vertically")
+diff scroll up: user.emacs("ediff-scroll-vertically-reverse")
+
 # ---- Ediff ----
 diff next: user.emacs("ediff-next-difference")
 diff last: user.emacs("ediff-previous-difference")
 diff accept (a | left): user.emacs("ediff-copy-A-to-B")
 diff accept (b | right): user.emacs("ediff-copy-B-to-A")
 diff quit: user.emacs("ediff-quit")
+
+# ---- Visual mode ----
+visual mode:
+    key(v)
+    user.evil_set_insert()
+
+visual line mode:
+    key(V)
+    user.evil_set_insert()
+
+visual block mode:
+    key(ctrl-v)
+    user.evil_set_insert()
+
+# ---- Code folding ----
+collapse toggle: key(z a)
+collapse: key(z c)
+expand: key(z o)
+collapse all: key(z M)
+expand all: key(z R)
 
 # ---- Multiple cursors (evil-mc) ----
 cursor all: user.emacs("evil-mc-make-all-cursors")
@@ -176,8 +232,14 @@ cursor freeze: user.emacs("evil-mc-pause-cursors")
 cursor resume: user.emacs("evil-mc-resume-cursors")
 
 # ---- Code navigation ----
-find definition: user.emacs("lsp-find-definition")
-find references: user.emacs("lsp-find-references")
+(definition | find definition): key(g d)
+(find usages | find references): key(alt-shift-/)
+go back: user.emacs("xref-go-back")
+go forward: user.emacs("xref-go-forward")
+rename: user.emacs("eglot-rename")
+quick action: user.emacs("eglot-code-actions")
+next method: user.emacs("evil-forward-section-begin")
+previous method: user.emacs("evil-backward-section-begin")
 
 search directory:
     user.emacs_leader()
@@ -211,6 +273,8 @@ magit last: user.emacs("magit-section-backward-sibling")
 magit next file: user.emacs("magit-section-forward")
 magit last file: user.emacs("magit-section-backward")
 magit visit file: user.emacs("magit-diff-visit-file")
+magit ediff: user.emacs("magit-ediff-dwim")
+diff revision: user.emacs("ediff-revision")
 magit expand: user.emacs("magit-section-toggle")
 
 magit stash: user.emacs("magit-stash")
