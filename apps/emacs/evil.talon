@@ -29,7 +29,7 @@ open [line] above:
 
 # ---- Claude Code IDE ----
 claude open: user.emacs("claude-code-ide")
-(claude stop | claude escape): user.emacs("claude-code-ide-send-escape")
+claude (stop | escape): user.emacs("claude-code-ide-send-escape")
 claude newline: user.emacs("claude-code-ide-insert-newline")
 claude menu: key(ctrl-c ctrl-')
 
@@ -153,7 +153,7 @@ capture pull request:
     user.emacs_leader()
     key(X p)
 
-capture finish: key(ctrl-c ctrl-c)
+capture (finish | complete): key(ctrl-c ctrl-c)
 capture refile: key(ctrl-c ctrl-w)
 capture abort: key(ctrl-c ctrl-k)
 
@@ -164,6 +164,16 @@ diff last: user.emacs("ediff-previous-difference")
 diff accept (a | left): user.emacs("ediff-copy-A-to-B")
 diff accept (b | right): user.emacs("ediff-copy-B-to-A")
 diff quit: user.emacs("ediff-quit")
+
+# ---- Multiple cursors (evil-mc) ----
+cursor all: user.emacs("evil-mc-make-all-cursors")
+cursor next: user.emacs("evil-mc-make-and-goto-next-match")
+cursor last: user.emacs("evil-mc-make-and-goto-prev-match")
+cursor below: user.emacs("evil-mc-make-cursor-move-next-line")
+cursor above: user.emacs("evil-mc-make-cursor-move-prev-line")
+cursor clear: user.emacs("evil-mc-undo-all-cursors")
+cursor freeze: user.emacs("evil-mc-pause-cursors")
+cursor resume: user.emacs("evil-mc-resume-cursors")
 
 # ---- Code navigation ----
 find definition: user.emacs("lsp-find-definition")

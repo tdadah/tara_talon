@@ -39,3 +39,7 @@ visual [mode]:
 visual line [mode]:
     key(V)
     user.evil_set_insert()
+
+visual block [mode]:
+    key(ctrl-v)
+    user.evil_set_insert()
