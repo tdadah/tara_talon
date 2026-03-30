@@ -113,6 +113,10 @@ roam backlinks:
     user.emacs_leader()
     key(n r r)
 
+roam capture:
+    user.emacs_leader()
+    key(n r n)
+
 roam sync: user.emacs("org-roam-db-sync")
 
 roam today:
