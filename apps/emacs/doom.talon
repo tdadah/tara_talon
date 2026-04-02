@@ -235,6 +235,28 @@ cursor clear: user.emacs("evil-mc-undo-all-cursors")
 cursor freeze: user.emacs("evil-mc-pause-cursors")
 cursor resume: user.emacs("evil-mc-resume-cursors")
 
+# ---- Diagnostics / Errors ----
+next error: key(] d)
+last error: key([ d)
+
+error list:
+    user.emacs_leader()
+    key(c x)
+
+workspace errors:
+    user.emacs_leader()
+    key(c X)
+
+search diagnostics: user.emacs("consult-flymake")
+
+peek error:
+    user.emacs_leader()
+    key(c d)
+
+show hover:
+    user.emacs_leader()
+    key(c k)
+
 # ---- Code navigation ----
 (definition | find definition): key(g d)
 (find usages | find references): key(alt-shift-/)
