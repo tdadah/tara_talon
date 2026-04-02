@@ -23,6 +23,12 @@ talon logs:
 	key("right")
 	key("enter")
 enter: key("enter")
+doom doctor:
+	insert("~/.config/emacs/bin/doom doctor")
+	key("enter")
+doom sync:
+	insert("~/.config/emacs/bin/doom sync")
+	key("enter")
 sublime: insert("subl ")
 slash exit:
     insert("/exit")
