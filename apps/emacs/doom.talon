@@ -205,6 +205,10 @@ diff accept (a | left): user.emacs("ediff-copy-A-to-B")
 diff accept (b | right): user.emacs("ediff-copy-B-to-A")
 diff quit: user.emacs("ediff-quit")
 
+# ---- Markdown ----
+markdown live: user.emacs("markdown-live-preview-mode")
+markdown plain: user.emacs("markdown-mode")
+
 # ---- Visual mode ----
 visual mode:
     key(v)
@@ -369,6 +373,10 @@ workspace new:
 workspace rename:
     user.emacs_leader()
     key(tab r)
+
+workspace load:
+    user.emacs_leader()
+    key(tab l)
 
 workspace <number_small>:
     user.emacs_leader()
