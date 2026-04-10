@@ -54,7 +54,8 @@ paste [below]:  key(p)
 paste above:    key(P)
 
 # ---- Spell check ----
-spell check: key(z =)
+# spell check: key(z =)
+spell check: user.emacs("flyspell-correct-at-point")
 
 # ---- Search ----
 search:         key(/)
@@ -90,7 +91,12 @@ jump down: key(ctrl-w j)
 
 # ---- Buffer tabs (centaur-tabs) ----
 tab next: key(g t)
-tab back: key(g T)
+tab (back|last): key(g T)
+I buffer:
+  user.emacs_leader()
+  key(b i)
+buffer back: key(' b [)
+buffer next: key(' b ])
 
 # ---- Doom leader key ----
 # Override user.emacs_leader in settings.talon to match your doom config:
@@ -105,11 +111,11 @@ roam find:
     user.emacs_leader()
     key(n r f)
 
-roam insert:
+roam insert [(node|link)]:
     user.emacs_leader()
     key(n r i)
 
-roam backlinks:
+roam (backlinks|buffer):
     user.emacs_leader()
     key(n r r)
 
@@ -194,20 +200,45 @@ capture refile: key(ctrl-c ctrl-w)
 capture abort: key(ctrl-c ctrl-k)
 
 # ---- Project search ----
-diff toggle: user.emacs("ediff-toggle-split")
-diff scroll down: user.emacs("ediff-scroll-vertically")
-diff scroll up: user.emacs("ediff-scroll-vertically-reverse")
+refresh projects:
+    user.emacs_leader()
+    key(p D)
 
 # ---- Ediff ----
 diff next: user.emacs("ediff-next-difference")
+diff toggle: user.emacs("ediff-toggle-split")
+diff scroll down: user.emacs("ediff-scroll-vertically")
+diff scroll up: user.emacs("ediff-scroll-vertically-reverse")
 diff last: user.emacs("ediff-previous-difference")
 diff accept (a | left): user.emacs("ediff-copy-A-to-B")
 diff accept (b | right): user.emacs("ediff-copy-B-to-A")
 diff quit: user.emacs("ediff-quit")
 
 # ---- Markdown ----
-markdown live: user.emacs("markdown-live-preview-mode")
-markdown plain: user.emacs("markdown-mode")
+markdown preview: user.emacs("markdown-view-mode")
+markdown mode: user.emacs("markdown-mode")
+grip mode: user.emacs("grip-mode")
+markdown link:
+    user.emacs_leader()
+    key(m i l)
+markdown code:
+    user.emacs_leader()
+    key(m i c)
+markdown block quote:
+    user.emacs_leader()
+    key(m i q)
+markdown code block:
+    user.emacs_leader()
+    key(m i C)
+markdown table:
+    user.emacs_leader()
+    key(m i t)
+markdown table (line|align):
+    user.emacs("markdown-table-align")
+
+
+# ---- dired ----
+(dear|deer|directory) up: key(^)
 
 # ---- Visual mode ----
 visual mode:
@@ -345,7 +376,7 @@ vterm:
     user.emacs_leader()
     key(o p)
 
-reveal file:
+show in [treemacs]:
     user.emacs_leader()
     key(o P)
 
