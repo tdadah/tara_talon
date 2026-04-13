@@ -69,6 +69,9 @@ fit screen: user.emacs("my/fit-screen")
 # ---- Help ----
 show keys: user.emacs("describe-bindings")
 show mode: user.emacs("describe-mode")
+doom reload:
+    user.emacs_leader()
+    key(h r r)
 
 # ---- Scrolling ----
 scroll down: key(ctrl-d)
@@ -203,6 +206,7 @@ capture abort: key(ctrl-c ctrl-k)
 refresh projects:
     user.emacs_leader()
     key(p D)
+discover projects: user.emacs("projectile-discover-projects-in-search-path")
 
 # ---- Ediff ----
 diff next: user.emacs("ediff-next-difference")
