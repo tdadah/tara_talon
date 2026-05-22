@@ -144,6 +144,41 @@ _This section automatically updates based on commands you ask about most often._
 | `copilot next` / `copilot back` | Copilot suggestions |
 | `go back` / `go forward` | Navigate history |
 
+## Doom Emacs Custom Commands
+
+### Org Roam
+| Command | Action |
+|---------|--------|
+| `roam find` | Find org-roam node (`' n r f`) |
+| `roam insert [node\|link]` | Insert link to org-roam node (`' n r i`) |
+| `roam buffer` / `roam backlinks` | Toggle org-roam backlinks buffer (`' n r r`) |
+| `roam capture` | Org-roam capture (`' n r n`) |
+| `roam today` | Open today's daily note (`' n r d T`) |
+| `roam sync` | Run `M-x org-roam-db-sync` |
+
+### DAP Debugger
+| Command | Action |
+|---------|--------|
+| `breakpoint toggle` | Toggle breakpoint on current line |
+| `breakpoint add` | Add breakpoint on current line |
+| `breakpoint delete [all]` | Delete all breakpoints |
+| `breakpoint condition` | Set conditional breakpoint |
+| `breakpoint hit condition` | Set hit-count breakpoint |
+| `breakpoint log` | Set log message breakpoint |
+| `debug test` | Debug test at point (`' m t d`) |
+| `debug [test] class` | Debug entire test class (`' m t D`) |
+| `step over` | Step over (next line) |
+| `step in` | Step into method |
+| `step out` | Step out of method |
+| `continue` | Continue to next breakpoint |
+| `debug restart` | Restart debug session |
+| `debug disconnect` | End debug session |
+| `debug eval` | Evaluate expression (prompts) |
+| `debug eval point` | Evaluate symbol at cursor |
+| `debug hydra` | Show debug control panel |
+| `debug switch frame` | Switch stack frame |
+| `debug frame up` / `debug frame down` | Navigate stack frames |
+
 ## Terminal/iTerm2 Custom Commands
 
 ### Navigation
