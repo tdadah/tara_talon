@@ -114,6 +114,55 @@ make vendor:
 	key("enter")
 go get:
 	insert("go get ")
+sparse add:
+	insert("spt git:sparse add ")
+sparse owner:
+	insert("spt git:sparse owner ")
+sparse drop:
+	insert("spt git:sparse drop ")
+sparse status:
+	insert("spt git:sparse status")
+	key("enter")
+sparse disable:
+	insert("spt git:sparse disable")
+	key("enter")
+sparse apply:
+	insert("spt git:sparse apply")
+	key("enter")
+sparse reset:
+	insert("spt git:sparse reset")
+	key("enter")
+sparse hook:
+	insert("spt git:sparse register-hook")
+	key("enter")
+spot tune backend:
+	insert("spt tune --backend")
+	key("enter")
+spot bootstrap:
+	insert("spt env:bootstrap")
+	key("enter")
+spot checkout:
+	insert("spt git:checkout ")
+spot fetch:
+    insert("spt git:fetch-local")
+spot setup:
+	insert("spt git:setup")
+	key("enter")
+spot add ref spec:
+	insert("spt git:add_refspec ")
+spot remove ref spec:
+	insert("spt git:remove_refspec ")
+spot maven repin:
+	insert("spt maven:repin")
+	key("enter")
+spot tasks:
+	insert("spt tasks")
+	key("enter")
+spot help:
+	insert("spt help ")
+git stash pull pop:
+    insert("git stash && git pull && git stash pop")
+    key("enter")
 Katie meg:
 	insert("cd /Users/tarad/src/ghe.spotify.net/megaphone")
 	key("enter")
@@ -176,3 +225,6 @@ test handler:
 	key(enter)
 	insert("     }' http://localhost:8083 -v")
 	key(enter)
+katie mono repo:
+    insert("cd ~/src/services-pilot")
+    key(enter)

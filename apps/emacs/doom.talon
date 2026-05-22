@@ -54,7 +54,6 @@ paste [below]:  key(p)
 paste above:    key(P)
 
 # ---- Spell check ----
-# spell check: key(z =)
 spell check: user.emacs("flyspell-correct-at-point")
 
 # ---- Search ----
@@ -69,6 +68,7 @@ fit screen: user.emacs("my/fit-screen")
 # ---- Help ----
 show keys: user.emacs("describe-bindings")
 show mode: user.emacs("describe-mode")
+show talon commands: user.emacs("my/talon-show-commands")
 doom reload:
     user.emacs_leader()
     key(h r r)
@@ -100,10 +100,10 @@ I buffer:
   key(b i)
 buffer back: key(' b [)
 buffer next: key(' b ])
+kill matching buffers: user.emacs("doom/kill-matching-buffers")
+kill buried buffers: user.emacs("doom/kill-buried-buffers")
 
 # ---- Doom leader key ----
-# Override user.emacs_leader in settings.talon to match your doom config:
-#   user.emacs_leader = apostrophe
 leader: user.emacs_leader()
 
 # ---- Calendar sync ----
@@ -137,50 +137,6 @@ org agenda:
     user.emacs_leader()
     key(o a)
 
-org agenda day: user.emacs("org-agenda-day-view")
-org agenda week: user.emacs("org-agenda-week-view")
-org agenda month: user.emacs("org-agenda-month-view")
-org agenda today: user.emacs("org-agenda-goto-today")
-org agenda todo: user.emacs("org-agenda-todo")
-org agenda next: user.emacs("org-agenda-later")
-org agenda last: user.emacs("org-agenda-earlier")
-
-# ---- Org archive ----
-org archive: user.emacs("org-archive-subtree")
-org refile: user.emacs("org-refile")
-
-# ---- Org navigation ----
-org next heading: user.emacs("org-next-visible-heading")
-org last heading: user.emacs("org-previous-visible-heading")
-org up heading: user.emacs("org-up-heading")
-org fold: user.emacs("org-cycle")
-org fold all: user.emacs("org-overview")
-org unfold all: user.emacs("org-show-all")
-org todo: user.emacs("org-todo")
-org check: user.emacs("org-toggle-checkbox")
-
-# ---- Org priority ----
-org priority:
-    user.emacs_leader()
-    key(m p p)
-
-org priority up:
-    user.emacs_leader()
-    key(m p u)
-
-org priority down:
-    user.emacs_leader()
-    key(m p d)
-
-# ---- Org dates ----
-org schedule:
-    user.emacs_leader()
-    key(m d s)
-
-org deadline:
-    user.emacs_leader()
-    key(m d d)
-
 # ---- Org capture ----
 capture todo:
     user.emacs_leader()
@@ -202,6 +158,13 @@ capture (finish | complete): key(ctrl-c ctrl-c)
 capture refile: key(ctrl-c ctrl-w)
 capture abort: key(ctrl-c ctrl-k)
 
+# ---- Dired (entry points) ----
+open dired:
+    user.emacs_leader()
+    key(o -)
+
+dired here: user.emacs("dired-jump")
+
 # ---- Project search ----
 refresh projects:
     user.emacs_leader()
@@ -218,32 +181,6 @@ diff accept (a | left): user.emacs("ediff-copy-A-to-B")
 diff accept (b | right): user.emacs("ediff-copy-B-to-A")
 diff quit: user.emacs("ediff-quit")
 
-# ---- Markdown ----
-markdown preview: user.emacs("markdown-view-mode")
-markdown mode: user.emacs("markdown-mode")
-grip mode: user.emacs("grip-mode")
-markdown link:
-    user.emacs_leader()
-    key(m i l)
-markdown code:
-    user.emacs_leader()
-    key(m i c)
-markdown block quote:
-    user.emacs_leader()
-    key(m i q)
-markdown code block:
-    user.emacs_leader()
-    key(m i C)
-markdown table:
-    user.emacs_leader()
-    key(m i t)
-markdown table (line|align):
-    user.emacs("markdown-table-align")
-
-
-# ---- dired ----
-(dear|deer|directory) up: key(^)
-
 # ---- Visual mode ----
 visual mode:
     key(v)
@@ -258,11 +195,11 @@ visual block mode:
     user.evil_set_insert()
 
 # ---- Code folding ----
-collapse toggle: key(z a)
-collapse: key(z c)
-expand: key(z o)
-collapse all: key(z M)
-expand all: key(z R)
+fold toggle: key(z a)
+fold close: key(z c)
+fold open: key(z o)
+fold close all: key(z M)
+fold open all: key(z R)
 
 # ---- Multiple cursors (evil-mc) ----
 cursor all: user.emacs("evil-mc-make-all-cursors")
@@ -332,32 +269,7 @@ switch project:
     user.emacs_leader()
     key(p p)
 
-# ---- Git ----
-magit next: user.emacs("magit-section-forward-sibling")
-magit last: user.emacs("magit-section-backward-sibling")
-magit next file: user.emacs("magit-section-forward")
-magit last file: user.emacs("magit-section-backward")
-magit visit file: user.emacs("magit-diff-visit-file")
-magit ediff: user.emacs("magit-ediff-dwim")
-diff revision: user.emacs("ediff-revision")
-magit expand: user.emacs("magit-section-toggle")
-
-magit stash: user.emacs("magit-stash")
-magit push: user.emacs("magit-push")
-magit pull: user.emacs("magit-pull")
-magit fetch: user.emacs("magit-fetch")
-magit commit: user.emacs("magit-commit")
-magit merge: user.emacs("magit-merge")
-magit rebase: user.emacs("magit-rebase")
-magit log: user.emacs("magit-log")
-magit diff: user.emacs("magit-diff")
-magit checkout: user.emacs("magit-checkout")
-magit cherry pick: user.emacs("magit-cherry-pick")
-magit reset: user.emacs("magit-reset")
-magit stage: user.emacs("magit-stage")
-magit unstage: user.emacs("magit-unstage")
-magit discard: user.emacs("magit-discard")
-
+# ---- Git (entry points) ----
 magit status:
     user.emacs_leader()
     key(g g)
@@ -401,6 +313,10 @@ workspace close:
     user.emacs_leader()
     key(tab d)
 
+workspace kill session:
+    user.emacs_leader()
+    key(tab x)
+
 workspace new:
     user.emacs_leader()
     key(tab n)
@@ -416,3 +332,40 @@ workspace load:
 workspace <number_small>:
     user.emacs_leader()
     key("tab {number_small}")
+
+# ---- Misc ----
+java index: user.emacs("lsp-java-update-project-configuration")
+java internal build: user.emacs("lsp-java-build-project")
+lisp nuke: user.emacs("lsp-workspace-restart")
+add talon command: user.emacs("my/talon-add-command")
+doom quit:
+    user.emacs_leader()
+    key(q q)
+toggle test (lenses|lens): user.emacs("lsp-jt-lens-mode")
+
+# ---- DAP debugger ----
+breakpoint toggle: user.emacs("dap-breakpoint-toggle")
+breakpoint add: user.emacs("dap-breakpoint-add")
+breakpoint delete [all]: user.emacs("dap-breakpoint-delete-all")
+breakpoint condition: user.emacs("dap-breakpoint-condition")
+breakpoint hit condition: user.emacs("dap-breakpoint-hit-condition")
+breakpoint log: user.emacs("dap-breakpoint-log-message")
+debug test:
+    user.emacs_leader()
+    key(m t d)
+debug [test] class:
+    user.emacs_leader()
+    key(m t D)
+step over: user.emacs("dap-next")
+step in: user.emacs("dap-step-in")
+step out: user.emacs("dap-step-out")
+continue: user.emacs("dap-continue")
+debug restart: user.emacs("dap-debug-restart")
+debug disconnect: user.emacs("dap-disconnect")
+debug eval: user.emacs("dap-eval")
+debug eval point: user.emacs("dap-eval-thing-at-point")
+debug hydra: user.emacs("dap-hydra")
+debug switch frame: user.emacs("dap-switch-stack-frame")
+debug frame up: user.emacs("dap-up-stack-frame")
+debug frame down: user.emacs("dap-down-stack-frame")
+agent shell here: user.emacs("my/agent-shell-here")
